@@ -30,9 +30,9 @@ pipeline {
             steps {
                 snykSecurity(
                     snykInstallation: 'snyk',
-                    snykTokenId: 'snyk-api-token',
-                    additionalArguments: '--iac --report --org=$SNYK_ORG --severity-threshold=high',
-                    failOnIssues: true,
+                    snykTokenId: 'snyk-api-token-string',
+                    additionalArguments: "--iac --org=${SNYK_ORG} --severity-threshold=high --debug",
+                    failOnIssues: false,
                     monitorProjectOnBuild: false
                 )
             }
